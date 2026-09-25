@@ -1,0 +1,54 @@
+// Default profile keybindings.
+// The Sublime keymap stays authoritative; these only fill gaps it leaves.
+[
+  // Split navigation with Ctrl+h/j/k/l, mirroring vim-tmux-navigator in Neovim.
+  // Scoped out of the terminal, where Ctrl+h is backspace.
+  {
+    "key": "ctrl+h",
+    "command": "workbench.action.navigateLeft",
+    "when": "!terminalFocus"
+  },
+  {
+    "key": "ctrl+l",
+    "command": "workbench.action.navigateRight",
+    "when": "!terminalFocus"
+  },
+  {
+    "key": "ctrl+k",
+    "command": "workbench.action.navigateUp",
+    "when": "!terminalFocus && !suggestWidgetVisible"
+  },
+  {
+    "key": "ctrl+j",
+    "command": "workbench.action.navigateDown",
+    "when": "!terminalFocus && !suggestWidgetVisible"
+  },
+
+  // Equivalents for the <leader>s* split mappings.
+  { "key": "cmd+k v", "command": "workbench.action.splitEditor" },
+  { "key": "cmd+k s", "command": "workbench.action.splitEditorDown" },
+  { "key": "cmd+k e", "command": "workbench.action.evenEditorWidths" },
+
+  // <leader>xd — workspace diagnostics, as Trouble provides in Neovim.
+  { "key": "cmd+k d", "command": "workbench.actions.view.problems" },
+
+  // <leader>nh — clear search highlight.
+  {
+    "key": "cmd+k h",
+    "command": "closeFindWidget",
+    "when": "editorFocus && findWidgetVisible"
+  },
+
+  // Toggle Ruby <-> Ruby Focus (no language tooling or assistance).
+  // Profiles are defined in ~/.config/vscode-profiles.
+  {
+    "key": "ctrl+alt+cmd+f",
+    "command": "workbench.profiles.actions.profileEntry.ruby-focus-prof",
+    "when": "currentProfile == 'ruby-prof'"
+  },
+  {
+    "key": "ctrl+alt+cmd+f",
+    "command": "workbench.profiles.actions.profileEntry.ruby-prof",
+    "when": "currentProfile == 'ruby-focus-prof'"
+  }
+]

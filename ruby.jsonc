@@ -1,0 +1,120 @@
+{
+  // ---------------------------------------------------------------
+  // Ruby / Ruby on Rails
+  // ---------------------------------------------------------------
+
+  // Ruby LSP resolves the interpreter through asdf, as the Neovim config does.
+  // It also auto-generates .ruby-lsp/Gemfile per project and adds
+  // ruby-lsp-rails there, which supplies model, association, schema, and
+  // route navigation. Nothing needs adding to the project Gemfile.
+  // asdfExecutablePath must be the asdf binary itself: the extension runs
+  // `<asdfExecutablePath> exec ruby`. Pointing it at a Ruby shim produces
+  // `ruby exec ruby`, which fails with "No such file or directory -- exec".
+  "rubyLsp.rubyVersionManager": {
+    "identifier": "asdf",
+    "asdfExecutablePath": "/opt/homebrew/bin/asdf"
+  },
+  // RuboCop formats and lints, preferring the project bundle. The Rails apps
+  // here use rubocop-rails-omakase, which bundle exec resolves correctly.
+  "rubyLsp.formatter": "rubocop",
+  "rubyLsp.linters": ["rubocop"],
+  "rubyLsp.enabledFeatures": {
+    "codeActions": true,
+    "codeLens": true,
+    "completion": true,
+    "definition": true,
+    "diagnostics": true,
+    "documentSymbols": true,
+    "formatting": true,
+    "hover": true,
+    "inlayHint": true,
+    "semanticHighlighting": true,
+    "signatureHelp": true,
+    "typeHierarchy": true,
+    "workspaceSymbol": true
+  },
+  "rubyLsp.featuresConfiguration": {
+    "inlayHint": { "implicitHashValue": true, "implicitRescue": true }
+  },
+
+  "[ruby]": {
+    "editor.defaultFormatter": "Shopify.ruby-lsp",
+    "editor.tabSize": 2
+  },
+
+  // --- ERB views -------------------------------------------------
+  // erb-beautify (htmlbeautifier gem) formats; Herb supplies parsing
+  // and diagnostics. Herb's own formatter is off so the two do not fight.
+  "[erb]": {
+    "editor.defaultFormatter": "aliariff.vscode-erb-beautify",
+    "editor.formatOnSave": true,
+    "editor.tabSize": 2
+  },
+  "vscode-erb-beautify.customEnvVar": { "LC_ALL": "en_US.UTF-8" },
+  "languageServerHerb.formatter.enabled": false,
+  "languageServerHerb.linter.enabled": true,
+  "languageServerHerb.linter.fixOnSave": false,
+
+  // Emmet in ERB, matching emmet_ls in the Neovim setup.
+  "emmet.includeLanguages": { "erb": "html" },
+  "emmet.triggerExpansionOnTab": true,
+
+  // --- Tailwind (tailwindcss-rails) ------------------------------
+  "tailwindCSS.includeLanguages": { "erb": "html", "ruby": "html" },
+  "tailwindCSS.emmetCompletions": true,
+  // Completion inside Rails helpers: link_to "x", y, class: "..."
+  "tailwindCSS.experimental.classRegex": [
+    ["class:\\s*['\"]([^'\"]*)['\"]", "([a-zA-Z0-9\\-:./ ]+)"],
+    ["class=\\\"([^\\\"]*)"]
+  ],
+  "editor.quickSuggestions": { "strings": "on" },
+
+  // --- Rails file associations -----------------------------------
+  "files.associations": {
+    "*.html.erb": "erb",
+    "*.turbo_stream.erb": "erb",
+    "*.text.erb": "erb",
+    "*.erb": "erb",
+    "*.jbuilder": "ruby",
+    "*.rake": "ruby",
+    "*.ru": "ruby",
+    "*.arb": "ruby",
+    "Gemfile": "ruby",
+    "Rakefile": "ruby",
+    "Capfile": "ruby",
+    "Guardfile": "ruby",
+    "Dangerfile": "ruby",
+    "Brewfile": "ruby",
+    "Appraisals": "ruby",
+    ".simplecov": "ruby"
+  },
+
+  // --- Rails noise -----------------------------------------------
+  "files.exclude": {
+    "**/tmp/cache": true,
+    "**/vendor/bundle": true,
+    "**/.bundle": true,
+    "**/log": true,
+    "**/storage": true,
+    "**/coverage": true,
+    "**/public/assets": true,
+    "**/public/packs": true,
+    "**/.ruby-lsp": true
+  },
+  "search.exclude": {
+    "**/tmp": true,
+    "**/log": true,
+    "**/storage": true,
+    "**/coverage": true,
+    "**/vendor/bundle": true,
+    "**/public/assets": true,
+    "**/db/schema.rb": false,
+    "**/node_modules": true
+  },
+  // db/schema.rb and routes.rb are worth opening quickly.
+  "search.useIgnoreFiles": true,
+
+  // Sorbet is installed via the Shopify pack but none of these apps use it.
+  "sorbet.enabled": false,
+  "workbench.colorTheme": "Tokyo Night"
+}

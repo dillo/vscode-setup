@@ -1,0 +1,33 @@
+{
+  // Ruff replaces black, isort, and pylint, matching the Neovim setup.
+  "[python]": {
+    "editor.defaultFormatter": "charliermarsh.ruff",
+    "editor.tabSize": 4,
+    "editor.codeActionsOnSave": {
+      "source.fixAll.ruff": "explicit",
+      "source.organizeImports.ruff": "explicit"
+    }
+  },
+  "ruff.nativeServer": "on",
+  "ruff.organizeImports": true,
+
+  // Pylance handles types and hover; Ruff owns imports, as in Neovim.
+  "python.analysis.typeCheckingMode": "standard",
+  "python.analysis.autoImportCompletions": true,
+  "python.analysis.fixAll": [],
+  "python.languageServer": "Pylance",
+  "python.terminal.activateEnvironment": true,
+
+  "files.exclude": {
+    "**/__pycache__": true,
+    "**/.cache": true,
+    "**/.coverage": true,
+    "**/.coverage.*": true,
+    "**/.hypothesis": true,
+    "**/.mypy_cache": true,
+    "**/.nox": true,
+    "**/.pytest_cache": true,
+    "**/.ruff_cache": true,
+    "**/.tox": true
+  }
+}

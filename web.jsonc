@@ -1,0 +1,33 @@
+{
+  // Prettier is the formatter for every web filetype, matching conform.nvim.
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "[javascript]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+  "[javascriptreact]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+  "[typescript]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+  "[typescriptreact]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+  "[vue]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+  "[svelte]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+  "[css]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+  "[scss]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+  "[html]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+  "[graphql]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+  "prettier.requireConfig": true,
+  "prettier.useEditorConfig": true,
+
+  // ESLint supplies diagnostics, as it does through the eslint LSP in Neovim.
+  "editor.codeActionsOnSave": { "source.fixAll.eslint": "explicit" },
+  "eslint.useFlatConfig": true,
+  "eslint.run": "onType",
+
+  // Vue: the Neovim setup runs ts_ls with the Vue plugin rather than takeover mode.
+  "vue.server.hybridMode": "typeScriptPluginOnly",
+
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "typescript.enablePromptUseWorkspaceTsdk": true,
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "typescript.preferences.importModuleSpecifier": "non-relative",
+
+  "tailwindCSS.emmetCompletions": true,
+  "editor.quickSuggestions": { "strings": "on" }
+}

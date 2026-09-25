@@ -1,0 +1,43 @@
+{
+  // ---------------------------------------------------------------
+  // Ruby Focus: Ruby without assistance.
+  // Layered on core.jsonc + ruby.jsonc (see BASES in sync.py), so file
+  // associations, excludes, and indentation match the Ruby profile.
+  // Extensions come from ruby-focus-extensions.txt, not the core toolbelt,
+  // so no language servers, linters, or formatters load here.
+  // Toggle with ctrl+alt+cmd+f (keybindings.json in the default profile).
+  // ---------------------------------------------------------------
+
+  // Completion: nothing pops up unless asked for with ctrl+space.
+  "editor.quickSuggestions": { "other": "off", "comments": "off", "strings": "off" },
+  "editor.suggestOnTriggerCharacters": false,
+  "editor.wordBasedSuggestions": "off",
+  "editor.inlineSuggest.enabled": false,
+  "editor.parameterHints.enabled": false,
+  "emmet.showExpandedAbbreviation": "never",
+  "emmet.triggerExpansionOnTab": false,
+
+  // Inline noise: hovers, lightbulbs, code lens, inlay hints.
+  "editor.hover.enabled": false,
+  "editor.lightbulb.enabled": "off",
+  "editor.codeLens": false,
+  "editor.inlayHints.enabled": "off",
+  "editor.semanticHighlighting.enabled": false,
+
+  // No auto-inserted characters.
+  "editor.autoClosingBrackets": "never",
+  "editor.autoClosingQuotes": "never",
+  "editor.autoClosingComments": "never",
+  "editor.autoSurround": "never",
+  "html.autoClosingTags": false,
+
+  // Nothing rewrites the file on save.
+  "editor.formatOnSave": false,
+  "[ruby]": { "editor.tabSize": 2 },
+  "[erb]": { "editor.formatOnSave": false, "editor.tabSize": 2 },
+
+  // AI features: chat, Copilot, and inline AI suggestions.
+  "chat.disableAIFeatures": true,
+  "chat.commandCenter.enabled": false,
+  "vsicons.dontShowNewVersionMessage": true
+}

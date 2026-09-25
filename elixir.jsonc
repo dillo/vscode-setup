@@ -1,0 +1,54 @@
+{
+  // ---------------------------------------------------------------
+  // Elixir / Phoenix
+  // ---------------------------------------------------------------
+
+  // ElixirLS, the same server Neovim runs through Mason. mix format owns
+  // formatting and reads .formatter.exs (Phoenix.LiveView.HTMLFormatter for HEEx).
+  "elixirLS.dialyzerEnabled": true,
+  "elixirLS.fetchDeps": false,
+  "elixirLS.suggestSpecs": true,
+  "[elixir]": {
+    "editor.defaultFormatter": "JakeBecker.elixir-ls",
+    "editor.tabSize": 2
+  },
+  "[phoenix-heex]": {
+    "editor.defaultFormatter": "JakeBecker.elixir-ls",
+    "editor.tabSize": 2
+  },
+  "files.associations": {
+    "*.heex": "phoenix-heex",
+    "*.exs": "elixir",
+    "*.ex": "elixir"
+  },
+
+  // Emmet and Tailwind in HEEx, matching emmet_ls and tailwindcss in Neovim.
+  "emmet.includeLanguages": { "phoenix-heex": "html", "elixir": "html" },
+  "emmet.triggerExpansionOnTab": true,
+  "tailwindCSS.includeLanguages": { "phoenix-heex": "html", "elixir": "html" },
+  "tailwindCSS.emmetCompletions": true,
+  "tailwindCSS.experimental.classRegex": ["class[:]\\s*\"([^\"]*)\""],
+  "editor.quickSuggestions": { "strings": "on" },
+
+  // --- Mix / Phoenix noise ---------------------------------------
+  "files.exclude": {
+    "**/_build": true,
+    "**/deps": true,
+    "**/.elixir_ls": true,
+    "**/cover": true
+  },
+  "files.watcherExclude": {
+    "**/_build/**": true,
+    "**/deps/**": true,
+    "**/.elixir_ls/**": true,
+    "**/node_modules/**": true
+  },
+  "search.exclude": {
+    "**/_build": true,
+    "**/deps": true,
+    "**/.elixir_ls": true,
+    "**/priv/static/assets": true,
+    "**/node_modules": true
+  },
+  "workbench.colorTheme": "Tokyo Night"
+}

@@ -1,0 +1,16 @@
+bradlc.vscode-tailwindcss
+britesnow.vscode-toggle-quotes
+ckolkman.vscode-postgres
+docker.docker
+enkia.tokyo-night
+formulahendry.code-runner
+jakebecker.elixir-ls
+malvery.darcula-pycharm-dimmed
+mechatroner.rainbow-csv
+ms-azuretools.vscode-containers
+ms-vscode.sublime-keybindings
+phoenixframework.phoenix
+redhat.vscode-yaml
+shd101wyy.markdown-preview-enhanced
+vscode-icons-team.vscode-icons
+yzhang.markdown-all-in-one
