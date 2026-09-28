@@ -18,7 +18,7 @@
   "emmet.triggerExpansionOnTab": false,
 
   // Inline noise: hovers, lightbulbs, code lens, inlay hints.
-  "editor.hover.enabled": false,
+  "editor.hover.enabled": "off",
   "editor.lightbulb.enabled": "off",
   "editor.codeLens": false,
   "editor.inlayHints.enabled": "off",

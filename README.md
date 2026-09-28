@@ -1,7 +1,7 @@
 # VS Code setup
 
 Portable copy of my current VS Code setup for macOS. It includes the default
-settings, shared keybindings and MCP servers, seven language profiles, and an
+settings, shared keybindings and MCP servers, eight language profiles, and an
 extension manifest for each profile. `core.jsonc` and the profile JSONC files
 are the editable sources; `sync.py` generates VS Code's `settings.json` files.
 
@@ -17,15 +17,17 @@ are the editable sources; `sync.py` generates VS Code's `settings.json` files.
    python3 sync.py
    ```
 
-The script registers Web, Ruby, Python, Java, Go, Elixir, and Ruby Focus
-profiles. It writes settings and shared keybindings, then installs each
+The script registers Web, Ruby, Python, Java, Go, Elixir, Ruby Focus, and
+Rust Focus profiles. It writes settings and shared keybindings, then installs each
 profile's extension list. Existing files that change get a one-time
 `.vscode-setup.bak` backup alongside them. Rerun the script after editing a
 source file or extension manifest.
 
 The Ruby Focus profile inherits Ruby settings and replaces the extension list
-with only the theme, icon, and keymap extensions. The default profile has its
-own extension list in `extensions/default.txt`.
+with only the theme, icon, and keymap extensions. Rust Focus does the same on
+top of core settings alone: no rust-analyzer, completion, hovers, or AI
+features, so code is checked with `cargo` in the terminal. The default profile
+has its own extension list in `extensions/default.txt`.
 
 ## Local dependencies
 

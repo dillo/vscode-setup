@@ -19,6 +19,7 @@ PROFILES = {
     "go": ("Go", "go"),
     "elixir": ("Elixir", "beaker"),
     "ruby-focus": ("Ruby Focus", "eye-closed"),
+    "rust-focus": ("Rust Focus", "flame"),
 }
 BASES = {"ruby-focus": "ruby"}
 SHARED = dict.fromkeys(

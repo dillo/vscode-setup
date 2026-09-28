@@ -1,0 +1,3 @@
+enkia.tokyo-night
+ms-vscode.sublime-keybindings
+vscode-icons-team.vscode-icons
