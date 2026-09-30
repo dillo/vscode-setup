@@ -50,5 +50,26 @@
     "key": "ctrl+alt+cmd+f",
     "command": "workbench.profiles.actions.profileEntry.ruby-prof",
     "when": "currentProfile == 'ruby-focus-prof'"
+  },
+
+  // Cmd+K clears the terminal, as in iTerm2. Kept last so it outranks the
+  // cmd+k chords above and in the Sublime keymap while the terminal has focus.
+  {
+    "key": "cmd+k",
+    "command": "workbench.action.terminal.clear",
+    "when": "terminalFocus"
+  },
+
+  // Ctrl+` jumps between the terminal and the editor without hiding the panel.
+  // Hide the panel with Cmd+J from the terminal instead.
+  {
+    "key": "ctrl+`",
+    "command": "workbench.action.terminal.focus",
+    "when": "!terminalFocus"
+  },
+  {
+    "key": "ctrl+`",
+    "command": "workbench.action.focusActiveEditorGroup",
+    "when": "terminalFocus"
   }
 ]

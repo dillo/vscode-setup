@@ -32,6 +32,8 @@ has its own extension list in `extensions/default.txt`.
 ## Local dependencies
 
 - Install JetBrainsMono Nerd Font for the configured editor and terminal font.
+  The Ruby Focus and Rust Focus terminals use MesloLGL Nerd Font Mono instead,
+  to match iTerm2.
 - Ruby expects `asdf` at `/opt/homebrew/bin/asdf`; change `ruby.jsonc` if it
   lives elsewhere.
 - Language runtimes, formatters, and project dependencies are installed
@@ -43,3 +45,10 @@ has its own extension list in `extensions/default.txt`.
 This repository excludes VS Code's history, workspace storage, global state,
 profile databases, and installed extension binaries. Those files contain local
 state and are not needed to recreate the configuration.
+
+One layout detail lives in that excluded state. The Focus profiles open the
+terminal panel on the left, but its half-window width is stored in each
+profile's state database, not in a setting. On a new Mac, drag the panel to
+half width once in each Focus profile; VS Code remembers it. VS Code also
+saves the panel position per folder across all profiles, so a folder already
+opened elsewhere may keep the panel at the bottom until you move it.

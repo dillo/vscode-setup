@@ -49,6 +49,5 @@
     "**/.elixir_ls": true,
     "**/priv/static/assets": true,
     "**/node_modules": true
-  },
-  "workbench.colorTheme": "Tokyo Night"
+  }
 }

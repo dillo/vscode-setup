@@ -38,6 +38,17 @@
   "[rust]": { "editor.tabSize": 4 },
   "[toml]": { "editor.tabSize": 4 },
 
+  // Explorer and the rest of the primary side bar on the right.
+  "workbench.sideBar.location": "right",
+  // Terminal/output panel on the left, sharing the window with the editor.
+  // Only applies where a folder has no saved panel position; half width is
+  // set in the profile's layout state, not here (there is no setting for it).
+  "workbench.panel.defaultLocation": "left",
+  // Same font as iTerm2's Default profile, so the terminal reads the same in both.
+  "terminal.integrated.fontFamily": "'MesloLGL Nerd Font Mono', Menlo, monospace",
+  // iTerm2's scrollback (50,000 lines) instead of core's 10,000.
+  "terminal.integrated.scrollback": 50000,
+
   // Build output stays out of the explorer. (Search already skips it via
   // cargo's .gitignore; setting search.exclude here would replace core's.)
   "files.exclude": { "**/target": true },

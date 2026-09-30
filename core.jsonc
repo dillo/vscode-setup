@@ -6,7 +6,7 @@
   // ---------------------------------------------------------------
 
   // Appearance — matches the Neovim setup's JetBrainsMono Nerd Font.
-  "workbench.colorTheme": "Tokyo Night",
+  "workbench.colorTheme": "Catppuccin Macchiato",
   "workbench.iconTheme": "vscode-icons",
   "editor.fontFamily": "'JetBrainsMono Nerd Font', 'JetBrains Mono', Menlo, monospace",
   "editor.fontLigatures": true,

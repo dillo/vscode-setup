@@ -18,3 +18,4 @@ vscjava.vscode-java-test
 vscjava.vscode-maven
 vscode-icons-team.vscode-icons
 yzhang.markdown-all-in-one
+catppuccin.catppuccin-vsc

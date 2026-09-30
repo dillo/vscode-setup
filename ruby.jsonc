@@ -115,6 +115,5 @@
   "search.useIgnoreFiles": true,
 
   // Sorbet is installed via the Shopify pack but none of these apps use it.
-  "sorbet.enabled": false,
-  "workbench.colorTheme": "Tokyo Night"
+  "sorbet.enabled": false
 }
