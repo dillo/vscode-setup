@@ -53,5 +53,7 @@
   // AI features: chat, Copilot, and inline AI suggestions.
   "chat.disableAIFeatures": true,
   "chat.commandCenter.enabled": false,
+
+  // Set by vscode-icons on first launch; kept here so sync.py preserves it.
   "vsicons.dontShowNewVersionMessage": true
 }

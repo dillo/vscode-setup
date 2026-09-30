@@ -51,10 +51,6 @@
   // Marks Focus terminals; ~/.zshrc hides the p10k right prompt when set.
   "terminal.integrated.env.osx": { "VSCODE_FOCUS_PROFILE": "1" },
 
-  // Build output stays out of the explorer. (Search already skips it via
-  // cargo's .gitignore; setting search.exclude here would replace core's.)
-  "files.exclude": { "**/target": true },
-
   // AI features: chat, Copilot, and inline AI suggestions.
   "chat.disableAIFeatures": true,
   "chat.commandCenter.enabled": false,
