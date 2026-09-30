@@ -71,5 +71,8 @@
     "key": "ctrl+`",
     "command": "workbench.action.focusActiveEditorGroup",
     "when": "terminalFocus"
-  }
+  },
+
+  // Turn VSCodeVim on and off instantly, alongside ctrl+alt+cmd+f for Ruby Focus.
+  { "key": "ctrl+alt+cmd+v", "command": "toggleVim" }
 ]

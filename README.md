@@ -29,6 +29,9 @@ top of core settings alone: no rust-analyzer, completion, hovers, or AI
 features, so code is checked with `cargo` in the terminal. The default profile
 has its own extension list in `extensions/default.txt`.
 
+Every profile, Focus profiles included, installs VSCodeVim. It starts off in
+each window; press ctrl+alt+cmd+v to turn Vim motions on or off for the session.
+
 ## Local dependencies
 
 - Install JetBrainsMono Nerd Font for the configured editor and terminal font.

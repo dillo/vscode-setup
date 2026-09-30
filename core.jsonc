@@ -111,5 +111,9 @@
   "docker.extension.enableComposeLanguageServer": false,
 
   // MCP servers migrated here from the old Java profile.
-  "chat.mcp.gallery.enabled": true
+  "chat.mcp.gallery.enabled": true,
+
+  // VSCodeVim starts off in every window; ctrl+alt+cmd+v (keybindings.json)
+  // turns it on for the session.
+  "vim.disableExtension": true
 }
