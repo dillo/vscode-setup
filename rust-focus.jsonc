@@ -48,6 +48,8 @@
   "terminal.integrated.fontFamily": "'MesloLGL Nerd Font Mono', Menlo, monospace",
   // iTerm2's scrollback (50,000 lines) instead of core's 10,000.
   "terminal.integrated.scrollback": 50000,
+  // Marks Focus terminals; ~/.zshrc hides the p10k right prompt when set.
+  "terminal.integrated.env.osx": { "VSCODE_FOCUS_PROFILE": "1" },
 
   // Build output stays out of the explorer. (Search already skips it via
   // cargo's .gitignore; setting search.exclude here would replace core's.)

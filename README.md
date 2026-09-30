@@ -34,6 +34,24 @@ has its own extension list in `extensions/default.txt`.
 - Install JetBrainsMono Nerd Font for the configured editor and terminal font.
   The Ruby Focus and Rust Focus terminals use MesloLGL Nerd Font Mono instead,
   to match iTerm2.
+- The Focus profiles set `VSCODE_FOCUS_PROFILE=1` in their terminals so the
+  shell can hide Powerlevel10k's right prompt there. That part lives in
+  `~/.zshrc`, which this repository does not track. Skip the instant prompt
+  when the variable is set by adding `-z "$VSCODE_FOCUS_PROFILE" &&` to the
+  test at the top of `~/.zshrc`:
+
+  ```zsh
+  if [[ -z "$VSCODE_FOCUS_PROFILE" && -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  ```
+
+  Then add this after `source ~/.p10k.zsh`:
+
+  ```zsh
+  if [[ -n "$VSCODE_FOCUS_PROFILE" ]]; then
+    typeset -g POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=()
+    typeset -g POWERLEVEL9K_INSTANT_PROMPT=off
+  fi
+  ```
 - Ruby expects `asdf` at `/opt/homebrew/bin/asdf`; change `ruby.jsonc` if it
   lives elsewhere.
 - Language runtimes, formatters, and project dependencies are installed
