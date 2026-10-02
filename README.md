@@ -31,6 +31,8 @@ has its own extension list in `extensions/default.txt`.
 
 Every profile, Focus profiles included, installs VSCodeVim. It starts off in
 each window; press ctrl+alt+cmd+v to turn Vim motions on or off for the session.
+The two Focus profiles show relative line numbers, so counts for motions such
+as `5k` can be read off the gutter; the other profiles keep absolute numbers.
 
 ## Local dependencies
 

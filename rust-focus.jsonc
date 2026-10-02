@@ -38,6 +38,9 @@
   "[rust]": { "editor.tabSize": 4 },
   "[toml]": { "editor.tabSize": 4 },
 
+  // Relative line numbers, so counts for Vim motions (5k, 3j) read off the gutter.
+  "editor.lineNumbers": "relative",
+
   // Explorer and the rest of the primary side bar on the right.
   "workbench.sideBar.location": "right",
   // Terminal/output panel on the left, sharing the window with the editor.
@@ -56,5 +59,7 @@
   "chat.commandCenter.enabled": false,
 
   // Set by vscode-icons on first launch; kept here so sync.py preserves it.
-  "vsicons.dontShowNewVersionMessage": true
+  "vsicons.dontShowNewVersionMessage": true,
+  // Set by VS Code when the terminal's first-use hint was dismissed; likewise.
+  "terminal.integrated.initialHint": false
 }
