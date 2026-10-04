@@ -57,6 +57,27 @@ as `5k` can be read off the gutter; the other profiles keep absolute numbers.
     typeset -g POWERLEVEL9K_INSTANT_PROMPT=off
   fi
   ```
+- To open Rust projects straight into Rust Focus, add this `code` wrapper to
+  `~/.zshrc`. It adds `--profile "Rust Focus"` when a `Cargo.toml` is at or
+  above the folder or file being opened; an explicit `--profile` wins:
+
+  ```zsh
+  code() {
+    local arg dir
+    if (( ! ${@[(I)--profile*]} )); then
+      for arg in "$@"; do
+        [[ "$arg" == -* ]] && continue
+        dir="${arg:A}"; [[ -d "$dir" ]] || dir="${dir:h}"
+        while [[ "$dir" != / && ! -f "$dir/Cargo.toml" ]]; do dir="${dir:h}"; done
+        if [[ -f "$dir/Cargo.toml" ]]; then
+          command code --profile "Rust Focus" "$@"; return
+        fi
+        break
+      done
+    fi
+    command code "$@"
+  }
+  ```
 - Ruby expects `asdf` at `/opt/homebrew/bin/asdf`; change `ruby.jsonc` if it
   lives elsewhere.
 - Language runtimes, formatters, and project dependencies are installed
@@ -69,9 +90,11 @@ This repository excludes VS Code's history, workspace storage, global state,
 profile databases, and installed extension binaries. Those files contain local
 state and are not needed to recreate the configuration.
 
-One layout detail lives in that excluded state. The Focus profiles open the
-terminal panel on the left, but its half-window width is stored in each
-profile's state database, not in a setting. On a new Mac, drag the panel to
-half width once in each Focus profile; VS Code remembers it. VS Code also
-saves the panel position per folder across all profiles, so a folder already
-opened elsewhere may keep the panel at the bottom until you move it.
+One layout detail lives in that excluded state. Every profile puts the side
+bar on the right and opens the terminal panel on the left, but the panel's
+half-window width is stored in each profile's state database, not in a setting.
+On a new Mac, drag the panel to half width once in each profile; VS Code
+remembers it. VS Code also saves the panel position per folder across all
+profiles, and that overrides the default, so a folder where the panel was
+moved keeps it there. Run View: Move Panel Left in that folder's window to
+put it back.

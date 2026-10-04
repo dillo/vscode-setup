@@ -101,7 +101,13 @@
   "[json]": { "editor.tabSize": 2 },
   "[jsonc]": { "editor.tabSize": 2 },
 
+  // Layout: Explorer and the rest of the primary side bar on the right.
+  "workbench.sideBar.location": "right",
+
   // Terminal.
+  // Terminal/output panel on the left in every profile. Only applies where a
+  // folder has no saved panel position (View: Move Panel Left fixes those).
+  "workbench.panel.defaultLocation": "left",
   "terminal.integrated.scrollback": 10000,
   "terminal.integrated.defaultProfile.osx": "zsh",
 
